@@ -63,7 +63,6 @@
     <Compile Include="Assets/Scripts/SkinsShopManager.cs" />
     <Compile Include="Assets/Scripts/StackTheBlockArslan/ShopItem.cs" />
     <Compile Include="Assets/Scripts/AClockworkBerry/ScreenLogger.cs" />
-    <Compile Include="Assets/Mesh Explosion/Internal/DestroyOnFadeCompletion.cs" />
     <Compile Include="Assets/Scripts/SkinItemData.cs" />
     <Compile Include="Assets/Scripts/StackTheBlockArslan/ObjectPooler.cs" />
     <Compile Include="Assets/Scripts/ContinueGameScreen.cs" />
@@ -83,28 +82,22 @@
     <Compile Include="Assets/Scripts/AudioClips.cs" />
     <Compile Include="Assets/Scripts/StackTheBlockArslan/PoolItem.cs" />
     <Compile Include="Assets/Scripts/UIScreensList.cs" />
-    <Compile Include="Assets/ShapeSwitcher.cs" />
+    <Compile Include="Assets/Scripts/ShapeSwitcher.cs" />
     <Compile Include="Assets/Scripts/shrinkGrowAnim.cs" />
-    <Compile Include="Assets/WeatherController.cs" />
+    <Compile Include="Assets/Scripts/WeatherController.cs" />
     <Compile Include="Assets/Scripts/DynamicGridFitter.cs" />
     <Compile Include="Assets/Scripts/GameplayController.cs" />
     <Compile Include="Assets/Scripts/Ad.cs" />
-    <Compile Include="Assets/Mesh Explosion/Demo/ClickOrTapToExplode.cs" />
-    <Compile Include="Assets/Mesh Explosion/Internal/Fade.cs" />
     <Compile Include="Assets/Scripts/UIManager.cs" />
-    <Compile Include="Assets/Mesh Explosion/Demo/ReloadScene.cs" />
     <Compile Include="Assets/Wao3DStudio/Models/Butterfly Effect 2/Scripts/GlobalFlock.cs" />
-    <Compile Include="Assets/Mesh Explosion/MeshExploder.cs" />
     <Compile Include="Assets/Scripts/SkinList.cs" />
     <Compile Include="Assets/Scripts/SoundManager.cs" />
-    <Compile Include="Assets/Mesh Explosion/Internal/MeshExplosion.cs" />
     <Compile Include="Assets/Scripts/StackTheBlockArslan/CustomGridLayout.cs" />
     <Compile Include="Assets/Scripts/SelfDisable.cs" />
     <Compile Include="Assets/Scripts/ColorPalette.cs" />
     <Compile Include="Assets/Scripts/BlockScript.cs" />
-    <Compile Include="Assets/Mesh Explosion/Internal/DestroyAfterTime.cs" />
     <Compile Include="Assets/Scripts/CameraController.cs" />
-    <Compile Include="Assets/PoolItemManager.cs" />
+    <Compile Include="Assets/Scripts/PoolItemManager.cs" />
     <Compile Include="Assets/Scripts/PlayerData.cs" />
     <Compile Include="Assets/Scripts/AdsManager.cs" />
     <Compile Include="Assets/Scripts/ColorController.cs" />
@@ -124,7 +117,6 @@
     <None Include="Assets/Resources/Unlit/Unlit_ARCoreBackground.shader" />
     <None Include="Assets/Shaders/UI_VerticalGradientImage.shader" />
     <None Include="Assets/Wao3DStudio/Models/Butterfly Effect 2/Shaders/Butterfly Effect Wings.shader" />
-    <None Include="Assets/Mesh Explosion/Read Me.txt" />
     <None Include="Assets/ro-twimch-font/misc/license-68f6.txt" />
   </ItemGroup>
   <ItemGroup>
