@@ -41,7 +41,10 @@ public class ContinueGameScreen : MonoBehaviour
 	public void ShowAd()
 	{
 		CloseScreen();
-	//	LazySingleton<AdsManager>.Instance.ShowRewardedAd(OnAdSuccess, OnAdfailed);
+		if(AdsManager.mInstance)
+		{
+		AdsManager.mInstance.ShowRewardedAd();    
+        }
 	}
 
 	public void CloseScreen()

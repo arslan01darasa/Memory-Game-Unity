@@ -1,171 +1,151 @@
 using StackTheBlockArslan;
-using System;
-using System.Collections;
 using UnityEngine;
 using UnityEngine.Advertisements;
 
-public class AdsManager : LazySingleton<AdsManager>
+using UnityEngine.Events;
+
+
+
+public class AdsManager : MonoBehaviour, IUnityAdsInitializationListener, IUnityAdsLoadListener, IUnityAdsShowListener
 {
-	[HideInInspector]
-	public bool isAdEnabled;
 
-	[HideInInspector]
-	public bool isAdRemoved;
+    public string GAME_ID = "5437555"; //replace with your gameID from dashboard. note: will be different for each platform.
+    public string GAME_ID_ANDROID = "";
 
-	[SerializeField]
-	private string iosGameId;
 
-	[SerializeField]
-	private string AndroidGameId;
 
-	private string gameId;
+    private const string VIDEO_PLACEMENT = "video";
+    private const string REWARDED_VIDEO_PLACEMENT = "rewardedVideo";
 
-	public bool testMode = true;
+    private bool testMode = true;
+    public bool RemoveAds;
 
-	public Ad displayAd;
 
-	public Ad bannerAd;
+    public UnityEvent successCallback;
 
-	public Ad rewardedAd;
-	/*
-		public void ShowDisplayAd()
-		{
-			if (isAdRemoved)
-			{
-				return;
-			}
-			if (displayAd.useFrequency)
-			{
-				displayAd.callCount++;
-				if (displayAd.adFrequency != 0 && displayAd.callCount % displayAd.adFrequency == 0)
-				{
-					StartCoroutine(ShowDisplayAdWhenReady());
-				}
-			}
-			else
-			{
-				StartCoroutine(ShowDisplayAdWhenReady());
-			}
-		}
+    public UnityEvent StartCallBack;
 
-		public void ShowBannerAd()
-		{
-			if (isAdRemoved)
-			{
-				return;
-			}
-			if (bannerAd.useFrequency)
-			{
-				bannerAd.callCount++;
-				if (bannerAd.adFrequency != 0 && bannerAd.callCount % bannerAd.adFrequency == 0)
-				{
-					StartCoroutine(ShowBannerAdWhenReady());
-				}
-			}
-			else
-			{
-				StartCoroutine(ShowBannerAdWhenReady());
-			}
-		}
 
-		public void HideBannerAd()
-		{
-		//	Advertisement.Banner.Hide();
-		}
+    public static AdsManager mInstance;
 
-		public void ShowRewardedAd(Action success, Action failure)
-		{
-			rewardedAd.callCount++;
-			if (rewardedAd.useFrequency && rewardedAd.adFrequency != 0 && rewardedAd.callCount % rewardedAd.adFrequency == 0)
-			{
-				StartCoroutine(ShowRewardedAdWhenReady(success, failure));
-			}
-			else
-			{
-				StartCoroutine(ShowRewardedAdWhenReady(success, failure));
-			}
-		}
+    public void Awake()
+    {
+        if (mInstance == null)
+            mInstance = this;
+        else if (mInstance != this)
+            Destroy(gameObject);
 
-		private void Awake()
-		{
-			gameId = AndroidGameId;
-			Advertisement.Initialize(gameId, testMode);
-		}
+        
+            Debug.Log(Application.platform + " supported by Advertisement");
+            Initialize();
+        
+        
 
-		private IEnumerator ShowDisplayAdWhenReady()
-		{
-			while (!Advertisement.IsReady(displayAd.placementID))
-			{
-				yield return new WaitForSeconds(0.25f);
-			}
-			yield return new WaitForSeconds(displayAd.delay);
-			ShowOptions showOptions = new ShowOptions
-			{
-				resultCallback = HandleAdResult
-			};
-			Advertisement.Show(displayAd.placementID, showOptions);
-		}
+        DontDestroyOnLoad(this.gameObject);
+        StartCallBack.Invoke();
+    }
 
-		private IEnumerator ShowBannerAdWhenReady()
-		{
-			while (!Advertisement.IsReady(bannerAd.placementID))
-			{
-				yield return new WaitForSeconds(0.25f);
-			}
-			yield return new WaitForSeconds(bannerAd.delay);
-			Advertisement.Banner.Show(bannerAd.placementID);
-		}
+    public void Initialize()
+    {
+        if (Advertisement.isSupported)
+        {
+            if(RemoveAds==false)
+            {
+            Debug.Log(Application.platform + " supported by Advertisement");
+            }
+        }
+#if UNITY_IOS
+        Advertisement.Initialize(GAME_ID, testMode, this);
+#else
+        Advertisement.Initialize(GAME_ID_ANDROID, testMode, this);
+#endif
+    }
 
-		private void HandleAdResult(ShowResult result)
-		{
-			switch (result)
-			{
-			case ShowResult.Finished:
-				UnityEngine.Debug.Log("The ad was successfully shown.");
-				break;
-			case ShowResult.Skipped:
-				UnityEngine.Debug.Log("The ad was skipped before reaching the end.");
-				break;
-			case ShowResult.Failed:
-				UnityEngine.Debug.LogError("The ad failed to be shown.");
-				break;
-			}
-		}
+    public void LoadRewardedAd()
+    {
+        Advertisement.Load(REWARDED_VIDEO_PLACEMENT, this);
+    }
 
-		private IEnumerator ShowRewardedAdWhenReady(Action _success, Action _failure)
-		{
-			rewardedAd.success = _success;
-			rewardedAd.failure = _failure;
-			while (!Advertisement.IsReady(rewardedAd.placementID))
-			{
-				yield return new WaitForSeconds(0.25f);
-			}
-			yield return new WaitForSeconds(rewardedAd.delay);
-			ShowOptions showOptions = new ShowOptions
-			{
-				resultCallback = HandleRewardedAdResultwc
-			};
-			Advertisement.Show(rewardedAd.placementID, showOptions);
-		}
+    public void ShowRewardedAd()
+    {
+        AudioListener.pause = true;
+        Advertisement.Show(REWARDED_VIDEO_PLACEMENT, this);
+    }
 
-		private void HandleRewardedAdResultwc(ShowResult result)
-		{
-			switch (result)
-			{
-			case ShowResult.Finished:
-				UnityEngine.Debug.Log("Rewarded ad was successfully shown.");
-				rewardedAd.success();
-				break;
-			case ShowResult.Skipped:
-				UnityEngine.Debug.Log("Rewarded ad was skipped before reaching the end.");
-				rewardedAd.failure();
-				break;
-			case ShowResult.Failed:
-				rewardedAd.failure();
-				UnityEngine.Debug.LogError("Rewarded ad failed to be shown.");
-				break;
-			}
-		}
-	}
-	*/
+    public void LoadInterstitial()
+    {
+        Advertisement.Load(VIDEO_PLACEMENT, this);
+    }
+
+    public void ShowInterstitial()
+    {
+        Debug.Log("Show ad");
+        AudioListener.pause = true;
+        Advertisement.Show(VIDEO_PLACEMENT, this);
+    }
+
+    #region Interface Implementations
+    public void OnInitializationComplete()
+    {
+        Debug.Log("Init Success");
+        LoadInterstitial();
+        LoadRewardedAd();
+    }
+
+    public void OnInitializationFailed(UnityAdsInitializationError error, string message)
+    {
+        Debug.Log($"Init Failed: [{error}]: {message}");
+    }
+
+    public void OnUnityAdsAdLoaded(string placementId)
+    {
+        Debug.Log($"Load Success: {placementId}");
+    }
+
+    public void OnUnityAdsFailedToLoad(string placementId, UnityAdsLoadError error, string message)
+    {
+        Debug.Log($"Load Failed: [{error}:{placementId}] {message}");
+    }
+
+    public void OnUnityAdsShowFailure(string placementId, UnityAdsShowError error, string message)
+    {
+        Debug.Log($"OnUnityAdsShowFailure: [{error}]: {message}");
+        AudioListener.pause = false;
+        if (placementId.Equals(REWARDED_VIDEO_PLACEMENT))
+        {            
+            LoadRewardedAd();
+        }
+    }
+
+    public void OnUnityAdsShowStart(string placementId)
+    {
+        Debug.Log($"OnUnityAdsShowStart: {placementId}");
+    }
+
+    public void OnUnityAdsShowClick(string placementId)
+    {
+        Debug.Log($"OnUnityAdsShowClick: {placementId}");
+    }
+
+    public void OnUnityAdsShowComplete(string placementId, UnityAdsShowCompletionState showCompletionState)
+    {
+        Debug.Log($"OnUnityAdsShowComplete: [{showCompletionState}]: {placementId}");
+        AudioListener.pause = false;
+        if (placementId.Equals(REWARDED_VIDEO_PLACEMENT) && showCompletionState.Equals(UnityAdsShowCompletionState.COMPLETED))
+        {
+            Debug.Log("Unity Ads Rewarded Ad Completed");
+            GameplayController.Instance.ContinueGame();
+            successCallback.Invoke();
+        }
+    }
+    #endregion
+
+    public void ToggleTestMode(bool isOn)
+    {
+        testMode = isOn;
+    }
+
+
+
+
 }

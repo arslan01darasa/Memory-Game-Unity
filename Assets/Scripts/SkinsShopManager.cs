@@ -85,7 +85,19 @@ public class SkinsShopManager : ShopManager<SkinItemData>
 
 	public void WatchAdForCash()
 	{
-//		LazySingleton<AdsManager>.Instance.ShowRewardedAd(OnAdSuccess, OnAdFailed);
+		//		LazySingleton<AdsManager>.Instance.ShowRewardedAd(OnAdSuccess, OnAdFailed);
+		if (AdsManager.mInstance)
+		{
+			AdsManager.mInstance.ShowRewardedAd();
+			OnAdSuccess();
+        }
+		else
+		{
+			OnAdFailed();
+        }
+
+		
+
 	}
 
 	private void OnAdSuccess()

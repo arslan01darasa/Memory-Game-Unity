@@ -114,7 +114,7 @@ public class GameManager : LazySingleton<GameManager>
 	{
 		PlayerDataHandler<PlayerData>.Instance.adsRemoved = true;
 		PlayerDataHandler<PlayerData>.Instance.SaveData();
-		LazySingleton<AdsManager>.Instance.isAdRemoved = true;
+	//	LazySingleton<AdsManager>.Instance.isAdRemoved = true;
 		UIManager.Instance.removeAdBtn.SetActive(value: false);
 	}
 

@@ -481,6 +481,119 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: b9125f3529ae14f3f83f7282929a2138, type: 3}
   m_PrefabInstance: {fileID: 856941979}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &839330701
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 839330703}
+  - component: {fileID: 839330702}
+  m_Layer: 0
+  m_Name: ADS MANAGER
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &839330702
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 839330701}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8750ae51a2607817e5549676221ab228, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GAME_ID: 3003911
+  GAME_ID_ANDROID: com.air.driver.blast
+  RemoveAds: 0
+  successCallback:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1791240871354459537}
+        m_TargetAssemblyTypeName: GameplayController, Assembly-CSharp
+        m_MethodName: ContinueGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1791240871354459526}
+        m_TargetAssemblyTypeName: StackTheBlockArslan.PnCUIManger, Assembly-CSharp
+        m_MethodName: OpenScreen
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: HUD
+          m_BoolArgument: 0
+        m_CallState: 2
+  StartCallBack:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 839330702}
+        m_TargetAssemblyTypeName: AdsManager, Assembly-CSharp
+        m_MethodName: Initialize
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 839330702}
+        m_TargetAssemblyTypeName: AdsManager, Assembly-CSharp
+        m_MethodName: LoadInterstitial
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 839330702}
+        m_TargetAssemblyTypeName: AdsManager, Assembly-CSharp
+        m_MethodName: LoadRewardedAd
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!4 &839330703
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 839330701}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 770.3592, y: 1053.0795, z: -13.884147}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &856941979
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -821,6 +934,71 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4602031697530550, guid: 17b7f2bfdb7da984eaf0033e124a77a5, type: 3}
   m_PrefabInstance: {fileID: 358414797}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &2068800758
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3577626843149267894, guid: fa79c615e83e14e2fbc0f083dee317e0, type: 3}
+      propertyPath: m_RootOrder
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 3577626843149267894, guid: fa79c615e83e14e2fbc0f083dee317e0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3577626843149267894, guid: fa79c615e83e14e2fbc0f083dee317e0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3577626843149267894, guid: fa79c615e83e14e2fbc0f083dee317e0, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3577626843149267894, guid: fa79c615e83e14e2fbc0f083dee317e0, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3577626843149267894, guid: fa79c615e83e14e2fbc0f083dee317e0, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3577626843149267894, guid: fa79c615e83e14e2fbc0f083dee317e0, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3577626843149267894, guid: fa79c615e83e14e2fbc0f083dee317e0, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3577626843149267894, guid: fa79c615e83e14e2fbc0f083dee317e0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3577626843149267894, guid: fa79c615e83e14e2fbc0f083dee317e0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3577626843149267894, guid: fa79c615e83e14e2fbc0f083dee317e0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4535964444866646681, guid: fa79c615e83e14e2fbc0f083dee317e0, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6712002539596242414, guid: fa79c615e83e14e2fbc0f083dee317e0, type: 3}
+      propertyPath: m_Name
+      value: Context Screen
+      objectReference: {fileID: 0}
+    - target: {fileID: 8326779526755350221, guid: fa79c615e83e14e2fbc0f083dee317e0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: fa79c615e83e14e2fbc0f083dee317e0, type: 3}
 --- !u!1 &1791240869458633845
 GameObject:
   m_ObjectHideFlags: 0
@@ -1097,7 +1275,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1791240869458633860
 GameObject:
   m_ObjectHideFlags: 0
@@ -1449,7 +1627,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1791240869458633880
 GameObject:
   m_ObjectHideFlags: 0
@@ -3170,7 +3348,31 @@ MonoBehaviour:
   appStoreURL: https://play.google.com/store/games?hl=en&gl=US
   OnGameIntialized:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 839330702}
+        m_TargetAssemblyTypeName: AdsManager, Assembly-CSharp
+        m_MethodName: LoadInterstitial
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 839330702}
+        m_TargetAssemblyTypeName: AdsManager, Assembly-CSharp
+        m_MethodName: ShowInterstitial
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnGameStarted:
     m_PersistentCalls:
       m_Calls: []
@@ -3940,29 +4142,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8750ae51a2607817e5549676221ab228, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isAdEnabled: 1
-  isAdRemoved: 0
-  iosGameId: 3049622
-  AndroidGameId: 3049623
-  testMode: 1
-  displayAd:
-    placementID: video
-    useFrequency: 1
-    adFrequency: 4
-    delay: 0.5
-    callCount: 0
-  bannerAd:
-    placementID: banner
-    useFrequency: 1
-    adFrequency: 1
-    delay: 0
-    callCount: 0
-  rewardedAd:
-    placementID: rewardedVideo
-    useFrequency: 0
-    adFrequency: 1
-    delay: 0
-    callCount: 0
+  GAME_ID: 5437234
+  GAME_ID_ANDROID: 
+  RemoveAds: 0
+  successCallback:
+    m_PersistentCalls:
+      m_Calls: []
+  StartCallBack:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1791240871354459510
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5442,31 +5630,7 @@ MonoBehaviour:
   loadingImg: {fileID: 1791240871354459527}
   successCallback:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1791240871354459537}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: ContinueGame
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1791240871354459526}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: OpenScreen
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: HUD
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   failureCallback:
     m_PersistentCalls:
       m_Calls:
@@ -9001,7 +9165,7 @@ RectTransform:
   m_Children:
   - {fileID: 1791240873199953227}
   m_Father: {fileID: 1791240873199953220}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
@@ -9149,7 +9313,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1791240873199953220}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
@@ -9184,18 +9348,18 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1791240869458633875}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1791240873199953220}
-  m_RootOrder: 0
+  m_Father: {fileID: 1791240873199953213}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 1}
-  m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -126}
-  m_SizeDelta: {x: 250, y: 103}
+  m_AnchorMin: {x: 0.33750007, y: 0.7827501}
+  m_AnchorMax: {x: 0.65125, y: 0.88100004}
+  m_AnchoredPosition: {x: 5.281822, y: 189.243}
+  m_SizeDelta: {x: 234.28107, y: 97.97586}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!224 &1791240873199953202
 RectTransform:
@@ -9437,14 +9601,15 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1791240873199953204}
+  - {fileID: 1791240873199953201}
   m_Father: {fileID: 1791240873199953220}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 1}
-  m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -5, y: -309}
-  m_SizeDelta: {x: 50.1, y: 50.1}
-  m_Pivot: {x: 0.5, y: 1}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -4.9999886, y: 199.44998}
+  m_SizeDelta: {x: 50.1, y: 49.100006}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &1791240873199953214
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9581,7 +9746,6 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1791240873199953201}
   - {fileID: 1791240873199953213}
   - {fileID: 1791240873199953199}
   - {fileID: 1791240873199953192}
