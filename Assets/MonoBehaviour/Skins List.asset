@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfc3b3ac6ccd9cd7d9e97ec16c67fc40, type: 3}
+  m_Name: Skins List
+  m_EditorClassIdentifier: 
+  skins:
+  - ID: 0
+    isLocked: 0
+    cost: 0
+    thumbnail: {fileID: 21300000, guid: fb302b6d06a24e6bbc75b861e4c952c5, type: 3}
+    texture: {fileID: 2800000, guid: b4098cf5c48a94a0c883e934af0d3b8d, type: 3}
+  - ID: 1
+    isLocked: 1
+    cost: 100
+    thumbnail: {fileID: 21300000, guid: a07e2446a61842a291d6e3575d40d19a, type: 3}
+    texture: {fileID: 2800000, guid: 0394c00513bd4af0a6d48c5b8922ac65, type: 3}
+  - ID: 2
+    isLocked: 1
+    cost: 200
+    thumbnail: {fileID: 21300000, guid: 18ffdbcc30df41f4a56bdbbfa068e270, type: 3}
+    texture: {fileID: 2800000, guid: 55c0aa59fbd324789b61679b8e126371, type: 3}
+  - ID: 3
+    isLocked: 1
+    cost: 300
+    thumbnail: {fileID: 21300000, guid: 267109fa4dd743598023b1988e24e8bc, type: 3}
+    texture: {fileID: 2800000, guid: 8596a7940525f4de1acdb0ecf92d97fe, type: 3}
+  - ID: 4
+    isLocked: 1
+    cost: 400
+    thumbnail: {fileID: 21300000, guid: 84a84214e79341d9b01716a25766ceb5, type: 3}
+    texture: {fileID: 2800000, guid: 3e1336345bd9400c9193264b4711cb71, type: 3}
+  - ID: 5
+    isLocked: 1
+    cost: 500
+    thumbnail: {fileID: 21300000, guid: 3171f35e4b614f019677abe9007c6cce, type: 3}
+    texture: {fileID: 2800000, guid: d070f206f92a4d2ca7375ab76d59095f, type: 3}
+  - ID: 6
+    isLocked: 1
+    cost: 600
+    thumbnail: {fileID: 21300000, guid: 21081a08813348a89e96a56968232310, type: 3}
+    texture: {fileID: 2800000, guid: 0c3b2422ec234befbc7552066e4dba65, type: 3}
+  - ID: 7
+    isLocked: 1
+    cost: 700
+    thumbnail: {fileID: 21300000, guid: b37f7836e0454d90b4577e7f502e3fab, type: 3}
+    texture: {fileID: 2800000, guid: 22f38501dd8442b7b87fa5a906f7839a, type: 3}
+  - ID: 8
+    isLocked: 1
+    cost: 800
+    thumbnail: {fileID: 21300000, guid: 4c2cf1a6a9824935ae1974a42cb7255e, type: 3}
+    texture: {fileID: 2800000, guid: 191d60a00fe741b99f6e3e8b0e9d800e, type: 3}
